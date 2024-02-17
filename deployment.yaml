@@ -2,17 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-server-deployment
-  labels:
-    app: web-server
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: web-server
   template:
     metadata:
       labels:
-        app: web-server
+        app: nginx
     spec:
       containers:
       - name: web-server
